@@ -1,1 +1,1 @@
-jwebserver -b 0.0.0.0 -p 8082 -d %~dp0/public -o info
+jwebserver -b 0.0.0.0 -p 8080 -d %~dp0/public/family_kanban -o info

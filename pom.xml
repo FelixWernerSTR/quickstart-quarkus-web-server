@@ -33,6 +33,11 @@
 			<groupId>io.quarkus</groupId>
 			<artifactId>quarkus-rest</artifactId>
 		</dependency>
+		<!-- quarkus-reactive-routes Fallback-Route-Handler for SPA-Routing -->
+		<dependency>
+		    <groupId>io.quarkus</groupId>
+		    <artifactId>quarkus-reactive-routes</artifactId>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -69,7 +74,7 @@
 								${project.basedir}/target/classes/META-INF/resources/</outputDirectory>
 							<resources>
 								<resource>
-									<directory>${project.basedir}/public/family_kanban</directory>
+									<directory>${project.basedir}/public/web_history</directory>
 								</resource>
 							</resources>
 						</configuration>

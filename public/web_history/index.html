@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Router Demo</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://unpkg.com/vue-router@4/dist/vue-router.global.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background: #f5f5f5; }
+        nav { background: #007bff; padding: 1rem; margin-bottom: 2rem; }
+        nav a { color: white; text-decoration: none; margin-right: 1rem; padding: 0.5rem; border-radius: 4px; }
+        nav a:hover, nav a.router-link-active { background: rgba(255,255,255,0.2); }
+        .page { max-width: 800px; margin: 0 auto; padding: 2rem; background: white; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        h1 { color: #333; }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <nav>
+            <router-link to="/home">Home</router-link>
+            <router-link to="/about-us">About Us</router-link>
+            <router-link to="/contacts">Contacts</router-link>
+        </nav>
+        <div class="page">
+            <router-view></router-view>
+        </div>
+    </div>
+
+    <script type="module">
+        const { createApp } = Vue;
+        const { createRouter, createWebHistory } = VueRouter;
+
+        // Komponenten definieren
+        const Home = {
+            template: `
+                <div>
+                    <h1>Willkommen zu Hause!</h1>
+                    <p>Dies ist die Home-Seite. Hier kannst du die Navigation testen.</p>
+                    <p>Aktuelle URL: {{ $route.path }}</p>
+                </div>
+            `
+        };
+
+        const AboutUs = {
+            template: `
+                <div>
+                    <h1>Über uns</h1>
+                    <p>Wir sind ein Demo-Projekt mit Vue Router und History-Support.</p>
+                    <ul>
+                        <li>Vue 3 via CDN</li>
+                        <li>Router mit createWebHistory</li>
+                        <li>Responsive Navigation</li>
+                    </ul>
+                </div>
+            `
+        };
+
+        const Contacts = {
+            template: `
+                <div>
+                    <h1>Kontakt</h1>
+                    <p>Schreib uns: demo@example.com</p>
+                    <p>Telefon: 0123/456789</p>
+                </div>
+            `
+        };
+
+        // Routen konfigurieren
+        const routes = [
+            { path: '/home', component: Home },
+            { path: '/about-us', component: AboutUs },
+            { path: '/contacts', component: Contacts },
+            { path: '/', redirect: '/home' } // Standard-Route
+        ];
+
+        // Router mit HTML5 History erstellen
+        const router = createRouter({
+            history: createWebHistory(),
+            routes
+        });
+
+        // App erstellen und mounten
+        createApp({}).use(router).mount('#app');
+    </script>
+</body>
+</html>
