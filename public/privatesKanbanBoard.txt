@@ -1,0 +1,43 @@
+Kurzbeschreibung Begin
+Bitte erzeuge mir eine Anwendung "Familien-Kanbanboard", eine einfache kindergerechte Kanban-Aufgabenverwaltung für eine Woche.
+Lanes: "Aufgaben", "InBearbeitung2, "Fertig" soll möglichst im Fokus sichtbar sein.
+Kurzbeschreibung Ende
+
+Beschreibung Start
+Drag and Drop soll unterstützt werden um die Aufgaben aus Backlog und dann auch in Lanes wie Aufgaben, InBearbeitung, Fertig hin und her zu ziehen. 
+In Backlog sind schon viele Aufgaben standartmäßig vorhanden. Zusätzliche Aufgaben sollten über Formular(Name, Typ(wiederkehrend/einmalig, Zugewiesen(Benutzer)), Fälligkeit) hinzufügbar sein. Diese Angaben sollen auch immer sichtbar sein. Bei "Zugewiesen" soll ein Benutzer ausgewählt werden. Die Benutzer können über ein Formular und extra Sicht erfasst(gelöscht/bearbeitet) werden.
+Folgende Aufgaben sind im Backlog schon vorhanden: 
+Geschirr aufräumen/Spülmaschen ausräumen.
+Staubsaugen
+Waschbecken waschen
+Mittagessen
+Abendessen
+Frühstück
+Boden wischen
+Wohnzimmer aufräumen
+Schlafzimmer aufräumen
+Lisas Zimmer aufräumen
+Majas Zimmer aufräumen
+Wäsche waschen
+Wäsche aufhängen
+Wäsche in den Schrank vom Trockner einräumen
+
+Täglich soll die Sicht auf aktuellen Wochentag übergehen.
+Bei allen Wochentagen kann vorab die Aufgaben befüllt sein. 
+
+Styling der Anwendung Start 
+Bitte die Farbe für Styling verwenden: "red"
+Im Footer Text anzeigen "Bereitgestelt von Felix Werner, Version v1.0".
+Elemente wie Kacheln sollen abgerundete Ecken haben.
+Styling der Anwendung Ende 
+
+Nicht funktionale Anforderungen Start
+Vue3, CompositionAPI mit Daten im Pinia-Store ist zu verwenden.
+Hohe Strukturierung des Sourcecodes. Nur Code ohne zu transpilieren soll entstehen: .js/.css/.html.
+Pro Maske ist eine Datenstruktur im PiniaStore abzulegen.
+Ein Mock Service für serverseitige Persistierung der Eingabedaten über eine REST-Api ist simuliert.
+Eine Rechte- Rollenverwaltung für jede Maske ist im Store abgebildet und mit der Route-Navigation verknüpft.
+Ein Mock Service existiert, der serverseitig für einen Benutzer die Rollen über eine REST-Api simuliert. 
+Per default hat man alle Rechte für alle Seiten der Strecke.
+Verwendung von "localStorage" erlaubt.
+Nicht funktionale Anforderungen Ende

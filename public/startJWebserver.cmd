@@ -1,0 +1,1 @@
+call D:\devel\java\jdk-21.0.2\bin\jwebserver.exe -b 0.0.0.0
