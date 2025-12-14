@@ -1,0 +1,36 @@
+{
+  "apiUrl": "/api/endpoint/get/list",
+  "refreshIntervalSeconds": 10,
+  "endpoints": [
+    {
+      "name": "ew",
+      "host": "svis.ew.svi.loc",
+      "protokoll": "https"
+    },
+    {
+      "name": "rt",
+      "host": "svis.rt.sv.loc",
+      "protokoll": "https"
+    },
+	{
+      "name": "ft",
+      "host": "svis.ft.sv.loc",
+      "protokoll": "https"
+    },
+	{
+      "name": "pr",
+      "host": "svis.pr.sv.loc",
+      "protokoll": "https"
+    },
+	{
+      "name": "vt",
+      "host": "svis.vt.sv.loc",
+      "protokoll": "https"
+    },
+	{
+      "name": "pt",
+      "host": "svis.pt.sv.loc",
+      "protokoll": "https"
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+Ziel:
+Erstelle eine vollständige, sofort lauffähige Endpoint-/Resource-Monitor-Webanwendung mit drei Views:
+
+    Health-Monitor
+
+    Konfiguration
+
+    Selenium-Test (Java-Code-View)
+
+1. View: Health-Monitor
+
+Funktionalität:
+
+    Zeigt den Status mehrerer konfigurierter Endpoints (URLs) an.
+
+    Bezieht die Daten über einen REST-Service (/api/endpoint/get/list), dessen Konfiguration in der Konfigurations-View erfolgt.
+
+    Sendet per POST eine JSON-Liste der konfigurierten Endpoints:
+
+json
+[
+  { "name": "gmx", "host": "gmx.de", "protokoll": "https" },
+  { "name": "heise", "host": "heise.de", "protokoll": "https" }
+]
+
+Der Service antwortet mit einer Liste inklusive Status-Informationen:
+
+    json
+    [
+      { "name": "gmx", "host": "gmx.de", "protokoll": "https", "status": "200", "details": "UP" },
+      { "name": "heise", "host": "heise.de", "protokoll": "https", "status": "501", "details": "server error 501" }
+    ]
+
+Darstellung:
+
+    Jeder Endpoint wird als eine Kachel (Card) angezeigt.
+
+    Wenn status = 200, zeige ein grünes Symbol (z. B. Icon oder Badge).
+
+    Ein Button „Details“ zeigt den Inhalt des Feldes details.
+
+    Ein Button „Aktualisieren“ ermöglicht manuelles Neuladen.
+
+    Zusätzlich automatische Aktualisierung alle 30 Sekunden (Default).
+
+2. View: Konfiguration
+
+Funktionalität:
+
+    Konfiguration der Backend-URL (Default: /api/endpoint/get/list).
+
+    Verwaltung einer Liste von Endpoints (Entities) inkl. Intervalle.
+
+    Persistente Speicherung in localStorage.
+
+    Export/Import der Entity-Liste im JSON-Format.
+
+    Default-Entities beim ersten Laden (wie oben in View 1).
+
+    Eingabefeld für das Aktualisierungsintervall (Sekunden), Standard: 30 Sekunden.
+
+3. View: Selenium
+
+Funktionalität:
+
+    Anzeige einer Java-Datei im Textformat: EndpointMonitorTest.java.
+
+    Der Code verwendet Selenium (selenium-java) zur Ausführung von JUnit-Tests.
+
+    Enthaltene Tests:
+
+        Navigation durch alle Views.
+
+        Hinzufügen und Löschen von URLs.
+
+        Validierung grundlegender UI-Funktionalitäten.
+
+4. Styling
+
+    Primärfarbe: Rot (red).
+
+    Darstellung: Karten-Layout (Kacheln) mit abgerundeten Ecken.
+
+    Footer-Text:
+    Bereitgestellt von SVI, Version v1.0
+
+5. Technische Anforderungen
+
+    Framework: Vue 3 mit Composition API.
+
+    State Management: Pinia Store.
+
+    Basis: Nur HTML, CSS und JavaScript (kein Build-Tool oder Code-Bundler).
+
+    Struktur: Saubere Codeorganisation:
+
+        Komponenten
+
+        Pinia Store
+
+        Views (Health-Monitor, Konfiguration, Selenium)
+		

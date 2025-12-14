@@ -1,0 +1,16 @@
+{
+  "apiUrl": "/api/endpoint/get/list",
+  "refreshIntervalSeconds": 10,
+  "endpoints": [
+    {
+      "name": "gmx",
+      "host": "gmx.de",
+      "protokoll": "https"
+    },
+    {
+      "name": "heise",
+      "host": "heise.de",
+      "protokoll": "https"
+    }
+  ]
+}
