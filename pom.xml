@@ -69,7 +69,7 @@
 								${project.basedir}/target/classes/META-INF/resources/</outputDirectory>
 							<resources>
 								<resource>
-									<directory>${project.basedir}/public</directory>
+									<directory>${project.basedir}/public/family_kanban</directory>
 								</resource>
 							</resources>
 						</configuration>
