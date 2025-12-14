@@ -8,5 +8,5 @@
 	localhost:8080
 	
 <p align="center">
-    <img src="./family-kanbann.png" alt="family-kanbann.png" width="600x">
+    <img src="./family-kanban.png" alt="family-kanban.png" width="600x">
 </p>
